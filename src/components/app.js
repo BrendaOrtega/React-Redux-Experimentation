@@ -3,13 +3,14 @@
  */
 import React from 'react';
 // import {Link} from 'react-router';
+import Header from './common/header';
 
 
 class App extends React.Component {
   render(){
     return (
       <div className="container">
-        <p>Header</p>
+        <Header/>
         {this.props.children}
         </div>
     );
