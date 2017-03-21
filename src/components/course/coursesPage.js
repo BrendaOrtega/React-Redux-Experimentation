@@ -2,6 +2,9 @@
  * Created by BlisS on 20/03/17.
  */
 import React from 'react';
+import { connect } from 'react-redux';
+import * as courseActions from '../../actions/courseActions';
+
 
 
 class CoursePage extends React.Component {
@@ -23,14 +26,18 @@ class CoursePage extends React.Component {
 
   onClickSave(e){
     // e.preventDefault();
-    console.log('chet');
-    alert(`Saving ${this.state.course.title}`);
+    this.props.dispatch(courseActions.createCourse(this.state.course));
+  }
+
+  courseRow(course, index) {
+    return <div key={index}>{course.title}</div>;
   }
 
   render() {
     return(
       <div>
         <h1>Courses</h1>
+        {this.props.courses.map(this.courseRow)}
         <div id="form">
           <h2>Add Course</h2>
           <input
@@ -48,6 +55,16 @@ class CoursePage extends React.Component {
   }
 }
 
-export default CoursePage;
+CoursePage.propTypes = {
+  dispatch: React.PropTypes.func.isRequired,
+  courses: React.PropTypes.array.isRequired
+};
+
+function mapStateToProps(state, ownProps){
+  return {
+    courses: state.courses
+  };
+}
+export default connect(mapStateToProps)(CoursePage);
 
 
