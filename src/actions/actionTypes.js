@@ -1,0 +1,10 @@
+/**
+ * Created by BlisS on 20/03/17.
+ */
+// export const CREATE_COURSE = 'CREATE_COURSE';
+export const LOAD_COURSES_SUCCESS = 'LOAD_COURSES_SUCCESS';
+export const LOAD_AUTHORS_SUCCESS = 'LOAD_AUTHORS_SUCCESS';
+export const SAVE_NEW_COURSE = 'SAVE_NEW_COURSE';
+export const UPDATE_NEW_COURSE = 'UPDATE_NEW_COURSE';
+export const BEGIN_AJAX_CALL = 'BEGIN_AJAX_CALL';
+
