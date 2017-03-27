@@ -22,7 +22,7 @@ import App from './components/app';
 
 render (
   <Provider store={store}>
-   <Router history={browserHistory} routes={routes} />
+   <Router routes={routes} />
   </Provider>,
   document.getElementById('app')
 );
