@@ -4,12 +4,15 @@
 import express from 'express';
 import path from 'path';
 import open from 'open';
+import compression from 'compression';
+
 
 /*eslint-disable no-console*/
 
 const port = 8000;
 const app = express();
 
+app.use(compression());
 app.use(express.static('docs'));
 
 app.get('*', function(req, res){
