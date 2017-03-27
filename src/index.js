@@ -1,3 +1,4 @@
+/*eslint-disable import/default */
 import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
@@ -6,7 +7,7 @@ import routes from './routes';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/toastr/build/toastr.css';
 import './styles/styles.css'; // web pack comprime esto ;)
-import configureStore from './store/configureStore';
+import configureStore from './store/configureStore.dev';
 import { Provider } from 'react-redux';
 // prepopulamos desde la api
 import { loadCourses } from './actions/courseActions';
