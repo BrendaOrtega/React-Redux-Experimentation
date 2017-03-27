@@ -14,13 +14,13 @@ export default function courseReducer(state = initalState.courses, action){
       //   Object.assign({}, action.course)];
           return action.courses;
 
-    case types.SAVE_NEW_COURSE:
+    case types.SAVE_NEW_COURSE_SUCCESS:
       return [
         ...state,
         Object.assign({}, action.course)
         ];
 
-    case types.UPDATE_NEW_COURSE:
+    case types.UPDATE_NEW_COURSE_SUCCESS:
       return [
         ...state.filter(course => course.id !== action.course.id),
         Object.assign({}, action.course)
